@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>open -a "console.app" "$TM_BUNDLE_SUPPORT/onebit/libs/processing-cmd-0178/log.onebit"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@l</string>
+	<key>name</key>
+	<string>View Log</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.java-processing</string>
+	<key>uuid</key>
+	<string>36052E78-9D80-4D55-8CA5-EED1ECBF5020</string>
+</dict>
+</plist>

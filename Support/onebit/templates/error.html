@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block style %}
+#help{
+	float:left;
+	clear:both;
+	color:#FFF;
+	margin-left:25px;
+	margin-top:18px;
+}
+{% endblock %}
+
+{% block content %}
+	<h3>eek</h3>
+	{% if sdk %}
+		<span class="error">$ANDROID_SDK has not been set correctly</span>
+	{% else %}
+		<span class="error">{{ error }}</span>
+	{% endif %}
+    <a id="help" href="javascript:TextMate.system('open http://www.onebitwonder.com/#help', null);">Help?</a>
+{% endblock %}

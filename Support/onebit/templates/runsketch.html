@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block script %}
+	$('#buttons').hide();
+    var title = "{{ title }}";
+    $('h1').html(title+" running...");
+    
+    var	fullscreen = "{{ fullscreen }}";
+	var proj_dir = "{{ proj_dir }}";
+	var scratch_dir = "{{ scratch_dir }}";
+    var bundle_dir = "{{ bundle_dir }}";
+	command = "";
+    cmd('cd "'+bundle_dir+'"');
+	cmd('cd "onebit/libs/processing-cmd-0178"');
+	cmd('> log.onebit');
+	cmd('cat /dev/null > log.onebit');
+	
+	
+	//cmd("./processing --sketch='"+proj_dir+"' --output='"+scratch_dir+"' --run >> log.onebit");
+	
+	cmd('cd bash');
+	if (fullscreen=="YES") {
+		cmd('python run.py "YES" "'+proj_dir+'" "'+scratch_dir+'" "'+bundle_dir+'"');
+	} else {
+		cmd('python run.py "NO" "'+proj_dir+'" "'+scratch_dir+'" "'+bundle_dir+'"');
+	}
+	
+	
+    //$('h3').html(command);
+	var result = TextMate.system(command, function(){
+		out = String(result.outputString);
+		err = String(result.errorString);
+		fin = out.concat(err);
+		if (fin.length==6) {
+			window.opener='x';
+			window.close();
+		} else {
+			$('h1').html(title+" ended.");
+			$('h3').addClass('error');
+			$('h3').append(fin);
+			self.resizeTo(420,$('h3').height()+220);
+			$('#buttons').hide();
+		}
+		
+		
+		
+	});
+	
+	$('#buttons').show();
+	
+	$('#stop').click(function() {
+		window.opener='x';
+		window.close();
+	});
+	
+	$('#log').click(function() {
+		command = "";
+         cmd('open -a "console.app" "$TM_BUNDLE_SUPPORT/onebit/libs/processing-cmd-0178/log.onebit"');
+         TextMate.system(command, null);
+	});
+
+
+{% endblock %}
+
+{% block style %}
+#buttons{
+	float:left;
+	margin-left:10px;
+}
+#buttons li{
+	margin-right:20px;
+	float:left;
+	background:#9ca6b0;
+	padding:4px 6px;
+	color:#4a545e;
+	cursor:pointer;
+}
+#buttons li:hover{
+	background:#FFF;
+}
+{% endblock %}
+
+{% block content %}
+	<h3></h3>
+	<ul id="buttons">
+	    <li id="stop">Stop</li>
+	    <li id="log">View Log</li>
+	</ul>
+{% endblock %}

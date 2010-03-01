@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>cd "$TM_BUNDLE_SUPPORT"
+cd "onebit/libs/processing-cmd-0178"
+
+./processing $TM_DIRECTORY --sketch=$TM_DIRECTORY --output=$TM_DIRECTORY/export/applet --export-applet	
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Export Applet</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.java-processing</string>
+	<key>uuid</key>
+	<string>EA4FBD40-DC68-4D66-88CA-CB2B80D63677</string>
+</dict>
+</plist>

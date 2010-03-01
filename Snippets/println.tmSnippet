@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>println("${1:`echo ${TM_FILENAME%.pde}`}::${2:method}() "${3: +} $4);$0</string>
+	<key>name</key>
+	<string>println</string>
+	<key>scope</key>
+	<string>source.java-processing</string>
+	<key>tabTrigger</key>
+	<string>println</string>
+	<key>uuid</key>
+	<string>3CE23B31-65FD-4B6F-85F8-5BD46C28AC48</string>
+</dict>
+</plist>

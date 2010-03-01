@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>python "${TM_BUNDLE_SUPPORT}/onebit/runsketch.py" "YES"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Present Sketch</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.java-processing</string>
+	<key>uuid</key>
+	<string>05D0B5BF-5A74-450A-A52B-58FA98DB7548</string>
+</dict>
+</plist>
